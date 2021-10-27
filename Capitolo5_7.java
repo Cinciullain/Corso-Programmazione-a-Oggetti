@@ -12,14 +12,14 @@ public class Capitolo5_7 {
         ConsoleInputManager in = new ConsoleInputManager();
         ConsoleOutputManager out = new ConsoleOutputManager();
 
-        Sequenza<String> memo = new Sequenza<String>();
+        Sequenza<String> mem = new Sequenza<String>();
         String input = in.readLine();
         while(!input.equals("")){
-            memo.add(input);
+            mem.add(input);
             input = in.readLine();
         }
 
-        for(String stringa : memo)
+        for(String stringa : mem)
             out.println(stringa);
     }
 }
