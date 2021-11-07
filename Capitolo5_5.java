@@ -27,13 +27,8 @@ public class Capitolo5_5 {
 
         //Somma totale entrate
         Importo somma = new Importo(0);
-        /*for(MeseDellAnno mese : MeseDellAnno.values()){
-            tmp = entrate[mese.ordinal()];
-            somma = somma.piu(tmp);
-        }*/
-        for(Importo imp : entrate){
+        for(Importo imp : entrate)
             somma = somma.piu(imp);
-        }
 
         //Calcolo medie e output
         Importo mediaMensile = somma.diviso(NMESI);

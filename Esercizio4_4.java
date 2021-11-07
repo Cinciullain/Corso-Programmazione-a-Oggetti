@@ -1,5 +1,5 @@
 /*
-Usando gli array di Java e la classe Importo ed il tipo enumerativo MeseDellAnno, scrivere un programma che
+Usando gli array di Java e la classe Importo e il tipo enumerativo MeseDellAnno, scrivere un programma che
 legge le entrate monetare per ogni mese di un anno, indica l’importo dell’entrata media mensile ed elenchi i
 mesi che hanno avute entrate inferiori alla media.
  */
