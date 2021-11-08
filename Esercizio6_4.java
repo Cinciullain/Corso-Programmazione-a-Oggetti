@@ -67,18 +67,23 @@ public class Esercizio6_4 {
 
         //Trovo la figura con area maggiore fra tutte quelle minori della media
         Figura vicina = null;
-        for(Figura a : figure)
-            if(vicina == null || a.haAreaMaggiore(vicina) && a.getArea() < media)
+        for(Figura a : figure) {
+            if(vicina == null){
+                if(a.getArea() < media)
+                    vicina = a;
+            }
+            else if ((a.haAreaMaggiore(vicina) && a.getArea() < media))
                 vicina = a;
+        }
 
         //Stampo la figura e l'area più vicina calcolata prima
         if(vicina instanceof Cerchio)
-            out.println("Cerchio: " + vicina.getArea());
+            out.println("Cerchio: " + vicina.getArea() + vicina);
         else if(vicina instanceof Quadrato)
-            out.println("Quadrato: " + vicina.getArea());
+            out.println("Quadrato: " + vicina.getArea() + vicina);
         else if(vicina instanceof Rettangolo)
-            out.println("Rettangolo: " + vicina.getArea());
+            out.println("Rettangolo: " + vicina.getArea() + vicina);
         else
-            out.println("Triangolo: " + vicina.getArea());
+            out.println("Triangolo: " + vicina.getArea() + vicina);
     }
 }
