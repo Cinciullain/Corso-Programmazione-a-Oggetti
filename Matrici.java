@@ -6,7 +6,10 @@
     -Calcolo del minimo di ciascuna riga, colonna
     -Calcolo somma matrice
     -Calcolo minimo numero matrice
-
+    Esercizio: 9.16
+    Descrizione: Creare metodo generico che prenda una matrice di elementi T
+    Esercizio:9.17
+    Descrizione: Creare metodo che controlli se la matrice è simmetrica
  */
 
 public class Matrici {
@@ -100,5 +103,55 @@ public class Matrici {
         }
 
         return m[iMin][jMin];
+    }
+
+    //Metodi generici
+    public static <T extends Comparable<? super T>> T minimoMatrice(T[][] t){
+        T minimo = null;
+        int i, j;
+        for(i = 0; i < t.length; i++){
+            for(j = 0; j < t[t.length - 1].length; j++){
+                if(minimo == null)
+                    minimo = t[i][j];
+                else if(t[i][j].compareTo(minimo) < 0)
+                    minimo = t[i][j];
+            }
+        }
+
+        return minimo;
+    }
+
+    public static <T extends Comparable<? super T>> T[] calcolaMinimoRiga(T[][] t, T[]ret){
+        T minimo = null;
+        int i, j;
+        for(i = 0; i < t.length; i++){
+            for(j = 0; j < t[t.length - 1].length; j++){
+                if(j == 0)
+                    minimo = t[i][j];
+                else if(t[i][j].compareTo(minimo) < 0)
+                    minimo = t[i][j];
+            }
+            ret[i] = minimo;
+        }
+
+        return ret;
+    }
+
+    public static <T extends Comparable<? super T>> boolean simmetrica(T[][] t){
+        int lenI = t.length;
+        int lenJ = t[lenI-1].length;
+        if(lenI != lenJ)
+            return false;
+        else {
+            int i, j;
+            for (i = 0; i < lenI; i++) {
+                for (j = 0; j < lenJ; j++) {
+                    if (t[i][j].compareTo(t[j][i]) != 0)
+                        return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
