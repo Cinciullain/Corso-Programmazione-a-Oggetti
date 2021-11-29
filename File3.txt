@@ -1,0 +1,4 @@
+rettangolo 4.2, 6
+cerchio 3.9
+quadrato 3.1
+cerchio 3.9
